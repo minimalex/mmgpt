@@ -8,7 +8,6 @@ from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain_core.tools import tool
 from langchain_core.prompts import MessagesPlaceholder
-from langchain_pinecone import PineconeVectorStore
 import pinecone
 
 # Initialize Pinecone
