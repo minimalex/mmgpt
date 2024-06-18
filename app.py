@@ -1,8 +1,6 @@
 import os
 import streamlit as st
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import WebBaseLoader
 from langchain_pinecone import PineconeVectorStore
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain.prompts.chat import ChatPromptTemplate
