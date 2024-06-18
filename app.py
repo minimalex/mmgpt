@@ -10,10 +10,6 @@ from langchain_core.tools import tool
 from langchain_core.prompts import MessagesPlaceholder
 import pinecone
 
-# Set environment variables
-os.environ["OPENAI_API_KEY"] = "sk-proj-8FIwHBPONCa6ZYlUSaIsT3BlbkFJnubcND4TtDvLYNjShySX"
-os.environ["PINECONE_API_KEY"] = "f0457515-3b5d-4b49-85ab-3714aebc919d"
-
 # Initialize Pinecone
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
 pinecone.init(api_key=pinecone_api_key)
