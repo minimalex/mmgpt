@@ -11,18 +11,19 @@ from pinecone import Pinecone
 # Initialize Pinecone
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
 pc = Pinecone(api_key=pinecone_api_key)
+
 index_name = "mm-gpt"
-index = pc.Index(index_name)
 
 # Initialize embeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 
 # Load the existing Pinecone index
-docsearch = PineconeVectorStore(index_name=index_name, embedding=embeddings)
+index = pc.Index(index_name)
+docsearch = PineconeVectorStore(index=index, embedding=embeddings)
 retriever = docsearch.as_retriever()
 
 def retrieve_with_source(query):
-    results = retriever.similarity_search_with_score(query)
+    results = docsearch.similarity_search_with_score(query)
     contexts_with_sources = [
         {"text": result[0].page_content, "source": result[0].metadata.get("source", "unknown")}
         for result in results
