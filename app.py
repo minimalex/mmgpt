@@ -261,7 +261,7 @@ agent = create_openai_tools_agent(llm, toolkit, prompt)
 agent_executor = AgentExecutor(agent=agent, tools=toolkit, verbose=False)
 
 # Streamlit web application
-st.title("OncoBot")
+st.title("OncoBot 3000")
 st.write("Gib hier deine Frage ein...ich bin spezialisiert auf die Indikationen: Bauchspeicheldrüsenkrebs, metastasierender Dickdarmkrebs und das Leberzellkarzinom:")
 
 input_query = st.text_input("Was liegt dir auf dem Herzen?", "")
