@@ -264,7 +264,7 @@ agent_executor = AgentExecutor(agent=agent, tools=toolkit, verbose=False)
 st.title("OncoBot")
 st.write("Gib hier deine Frage ein...ich bin spezialisiert auf die Indikationen: Bauchspeicheldrüsenkrebs, metastasierender Dickdarmkrebs und das Leberzellkarzinom:")
 
-input_query = st.text_input("Clinical Query", "")
+input_query = st.text_input("Was liegt dir auf dem Herzen?", "")
 if input_query:
     with st.spinner("Ich durchsuche die Untiefen meines allumfassenden Wissens :)"):
         result = agent_executor.invoke({"input": input_query})
