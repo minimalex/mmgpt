@@ -261,12 +261,12 @@ agent = create_openai_tools_agent(llm, toolkit, prompt)
 agent_executor = AgentExecutor(agent=agent, tools=toolkit, verbose=False)
 
 # Streamlit web application
-st.title("Evidence-based Bot")
-st.write("Enter your medical question:")
+st.title("OncoBot")
+st.write("Gib hier deine Frage ein...ich bin spezialisiert auf die Indikationen: Bauchspeicheldrüsenkrebs, metastasierender Dickdarmkrebs und das Leberzellkarzinom:")
 
 input_query = st.text_input("Clinical Query", "")
 if input_query:
-    with st.spinner("Processing..."):
+    with st.spinner("Ich durchsuche die Untiefen meines allumfassenden Wissens :)"):
         result = agent_executor.invoke({"input": input_query})
-        st.markdown("### I would suggest the following")
+        st.markdown("### Hier ist alles, was ich zu deiner Frage finden konnte...")
         st.markdown(result['output'])
