@@ -1,4 +1,5 @@
 langchain_openai
+langchainhub
 langchain_text_splitters
 langchain_community
 langchain-pinecone
