@@ -14,6 +14,7 @@ import pinecone
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
 pc = Pinecone(api_key=pinecone_api_key)
 index_name = "mm-gpt"
+index = pc.Index(index_name)
 
 # Initialize embeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
