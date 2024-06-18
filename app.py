@@ -8,7 +8,7 @@ from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain_core.tools import tool
 from langchain_core.prompts import MessagesPlaceholder
-import pinecone
+from pinecone import Pinecone
 
 # Initialize Pinecone
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
