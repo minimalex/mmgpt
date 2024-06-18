@@ -91,4 +91,4 @@ if input_query:
     with st.spinner("Processing..."):
         result = agent_executor.invoke({"input": input_query})
         st.markdown("### I would suggest the following")
-        st.markdown(result)
+        st.markdown(result['output'])
