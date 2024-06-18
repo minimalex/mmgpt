@@ -12,7 +12,7 @@ import pinecone
 
 # Initialize Pinecone
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
-pinecone.init(api_key=pinecone_api_key)
+pc = Pinecone(api_key=pinecone_api_key)
 index_name = "mm-gpt"
 
 # Initialize embeddings
